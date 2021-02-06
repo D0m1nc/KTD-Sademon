@@ -36,11 +36,11 @@ public class PlayerController : MonoBehaviour
         Debug.Log(moveInput);
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
 
-        if (facingRight == false && moveInput > 0)
+        if (facingRight == true && moveInput > 0)
         {
             flip();
         }
-        else if (facingRight == true && moveInput < 0)
+        else if (facingRight == false && moveInput < 0)
         {
             flip();
         }
