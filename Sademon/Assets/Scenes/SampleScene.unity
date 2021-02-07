@@ -546,6 +546,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 512
+  jumpTime: 0
   extraJumpValue: 1
 --- !u!70 &430297882
 CapsuleCollider2D:
