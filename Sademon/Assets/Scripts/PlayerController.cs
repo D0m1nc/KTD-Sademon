@@ -17,13 +17,21 @@ public class PlayerController : MonoBehaviour
     public float checkRadius;
     public LayerMask whatIsGround;
 
+    private float jumpTimeCounter;
+    public float jumpTime;
+    private bool isJumping;
+    private bool doubleJump;
+
     private int extraJumps;
     public int extraJumpValue;
+
+    private Animator anim;
 
     void Start()
     {
         extraJumps = extraJumpValue;
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -46,28 +54,52 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+   
+
+
+        
+   
+
 
     void Update()
     {
         if(isGrounded == true)
-        {
-            extraJumps = extraJumpValue;
+        { 
+            anim.SetBool("isJumping", false);
+            extraJumps = extraJumpValue;          
         }
 
+        else
+        {
+            anim.SetBool("isJumping", true);
+        }
+
+        
         if(Input.GetKeyDown(KeyCode.UpArrow) && extraJumps > 0)
         {
+            anim.SetTrigger("takeOff");
             rb.velocity = Vector2.up * jumpForce;
             extraJumps--;
         }
+        
+       
         else if (Input.GetKeyDown(KeyCode.UpArrow) && extraJumps == 0 && isGrounded == true)
         {
             rb.velocity = Vector2.up * jumpForce;
         }
 
+        if (moveInput == 0)
+        {
+            anim.SetBool("isRunning", false);
+        }
+
+        else
+        {
+            anim.SetBool("isRunning", true);
+        }
 
 
     }
-
 
 
     void flip()
