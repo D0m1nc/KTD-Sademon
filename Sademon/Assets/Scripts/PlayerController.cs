@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float Health = 100f;
+
     public float speed;
     public float jumpForce;
     private float moveInput;
