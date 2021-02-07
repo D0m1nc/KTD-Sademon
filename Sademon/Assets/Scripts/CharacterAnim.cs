@@ -20,6 +20,7 @@ public class CharacterAnim : MonoBehaviour
         {
             anim.SetBool("isRunning", true);
         } 
+
         else
         {
             anim.SetBool("isRunning", false);
