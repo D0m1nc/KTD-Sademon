@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private bool facingRight = true;
 
-
     private bool isGrounded;
     public Transform groundCheck;
     public float checkRadius;
@@ -102,8 +101,8 @@ public class PlayerController : MonoBehaviour
 
 
     }
-
-
+    
+    
     void flip()
     {
         facingRight = !facingRight;
@@ -111,6 +110,7 @@ public class PlayerController : MonoBehaviour
         Scaler.x *= -1;
         transform.localScale = Scaler;
     }
+
 
 
 }
