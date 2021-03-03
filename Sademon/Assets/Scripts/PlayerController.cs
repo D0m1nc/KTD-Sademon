@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
         }
 
         
-        if(Input.GetKeyDown(KeyCode.UpArrow) && extraJumps > 0)
+        if(Input.GetKeyDown(KeyCode.W) && extraJumps > 0)
         {
             anim.SetTrigger("takeOff");
             rb.velocity = Vector2.up * jumpForce;
