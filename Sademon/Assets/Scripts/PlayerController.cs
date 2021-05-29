@@ -53,13 +53,14 @@ public class PlayerController : MonoBehaviour
         {
             flip();
         }
+     
     }
 
-   
 
 
-        
-   
+
+
+
 
 
     void Update()

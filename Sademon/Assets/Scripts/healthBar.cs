@@ -5,7 +5,6 @@ using UnityEngine;
 public class healthBar : MonoBehaviour
 {
     public float CurrentHealth;
-    private float MaxHealth = 100f;
     PlayerController Player;
     private void Start()
     {
